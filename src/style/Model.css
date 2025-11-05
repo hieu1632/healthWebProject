@@ -1,0 +1,237 @@
+/* ==== GIAO DIỆN CHUNG ==== */
+body {
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, #a8c0ff 0%, #c0a4ff 100%);
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.diagnosis-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 30px 40px;
+  gap: 24px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ==== CARD CHUNG ==== */
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  padding: 20px 24px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+}
+
+h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+  color: #2f3e9e;
+  font-weight: 700;
+}
+
+/* ==== BỐ CỤC 3 CỘT ==== */
+.symptoms-panel {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.model-view {
+  flex: 2;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  padding: 25px;
+  color: #fff;
+  backdrop-filter: blur(15px);
+  box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.body-info {
+  flex: 1.1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ==== TIÊU ĐỀ ==== */
+.title {
+  font-size: 1.9rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+}
+
+.subtitle {
+  color: #f0f0f0;
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+/* ==== DANH SÁCH TRIỆU CHỨNG ==== */
+.symptom-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.symptom-item {
+  background: #f5f7ff;
+  border-left: 4px solid #4c6ef5;
+  border-radius: 10px;
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.symptom-item:hover {
+  background: #edf0ff;
+}
+
+.remove-btn {
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: background 0.2s;
+}
+
+.remove-btn:hover {
+  background: #fa5252;
+}
+
+/* ==== BUTTON CHUNG ==== */
+.analyze-btn {
+  background: linear-gradient(90deg, #4facfe, #7366ff);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 20px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  transition: opacity 0.25s ease, transform 0.15s ease;
+}
+
+.analyze-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.analyze-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.clear-btn {
+  background: #e9ecef;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  width: 100%;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.clear-btn:hover {
+  background: #dee2e6;
+}
+
+/* ==== KHUYẾN NGHỊ ==== */
+.analysis-card {
+  background: #fff;
+  border-left: 5px solid #4c6ef5;
+}
+
+.recommend-list {
+  padding-left: 20px;
+  color: #333;
+  margin: 0;
+}
+
+.recommend-list li {
+  margin-bottom: 8px;
+  list-style-type: "💡 ";
+  font-weight: 500;
+}
+
+/* ==== THREE.JS CONTAINER ==== */
+.model3d-container {
+  border-radius: 20px;
+  background: linear-gradient(120deg, #eef3ff, #f8faff);
+  overflow: hidden;
+}
+
+/* ==== THÔNG TIN VÙNG CƠ THỂ ==== */
+.part-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4c6ef5;
+  margin-bottom: 5px;
+}
+
+.description {
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.symptom-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.symptom-option {
+  background: #4c6ef5;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: background 0.2s, transform 0.15s;
+}
+
+.symptom-option:hover {
+  background: #5c7cfa;
+  transform: translateY(-2px);
+}
+
+/* ==== TRẠNG THÁI RỖNG ==== */
+.empty {
+  color: #888;
+  font-style: italic;
+  text-align: center;
+  padding: 15px 0;
+}
+
+/* ==== RESPONSIVE ==== */
+@media (max-width: 992px) {
+  .diagnosis-container {
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .model-view {
+    width: 100%;
+  }
+}
