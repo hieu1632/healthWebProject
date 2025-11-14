@@ -77,7 +77,7 @@ const ThreeScene: React.FC<ThreeSceneProps> = ({ onSelectBodyPart }) => {
     const hotspotMeshes: THREE.Mesh[] = [];
     const hotspotMaterial = new THREE.MeshStandardMaterial({
       color: 0x00ffff,
-      emissive: 0x00ffff,
+      emissive: 0x00ffff, 
       emissiveIntensity: 0.8,
     });
 
